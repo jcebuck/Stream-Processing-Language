@@ -1,0 +1,46 @@
+$n = 0;
+for stream_length do
+	$sum = 0;
+	$k = 0;
+	for $n + 1 do
+		$first = get_stream 1 $k;
+		$second = get_stream 2 $n - $k;
+
+		$res = 1;
+		$fact = $n;
+		for $fact - 1 do
+			$res = $res * $fact;
+			$fact = $fact - 1
+		endfor;
+
+		$nf = $res;
+
+		$res = 1;
+		$fact = $k;
+		for $fact - 1 do
+			$res = $res * $fact;
+			$fact = $fact - 1
+		endfor;
+
+		$kf = $res;
+
+		$res = 1;
+		$fact = $n - $k;
+		for $fact - 1 do
+			$res = $res * $fact;
+			$fact = $fact - 1
+		endfor;
+
+		$nkf = $res;
+
+		$den = $nkf * $kf;
+		$ncr = $nf / $den;
+
+		$res = $ncr * $first * $second;
+		$sum = $sum + $res;
+
+		$k = $k + 1
+	endfor;
+	write $sum;
+	$n = $n + 1
+endfor

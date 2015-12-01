@@ -1,0 +1,9 @@
+$i=0;
+for stream_length - 1 do
+	if $i > 0 then
+		$first = get_stream 1 $i;
+		$second = get_stream 1 $i + 1;
+		write $first + $second
+	endif;
+	$i = $i + 1
+endfor

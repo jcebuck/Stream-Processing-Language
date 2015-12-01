@@ -1,0 +1,7 @@
+$i=0;
+for stream_length do
+	$first = get_stream 1 $i;
+	$second = get_stream 2 $i;
+	write $first - 2 * $second;
+	$i = $i + 1
+endfor
